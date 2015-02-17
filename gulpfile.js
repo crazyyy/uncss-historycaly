@@ -1,10 +1,17 @@
 var gulp = require('gulp');
 var uncss = require('gulp-uncss');
+var minifyCSS = require('gulp-minify-css');
 
 gulp.task('default', function() {
-    return gulp.src('fb9af384ac58a2ab044f3c0d022abc40.css')
+    return gulp.src('d4701f60bee82cac47e6c7201cc1bf45.css')
         .pipe(uncss({
-            html: ['about.html', 'contact.html', 'contact-form.html', 'dental-all.html', 'dental-spec.html', 'index.html', 'index-new.html', 'services.html', 'services2.html']
+            html: ['http://drmichaels.me/team.htm']
         }))
         .pipe(gulp.dest('./out'));
+});
+ 
+gulp.task('minifycss', function() {
+  gulp.src('./out/*.css')
+    .pipe(minifyCSS({keepBreaks:true}))
+    .pipe(gulp.dest('./minif/'))
 });
