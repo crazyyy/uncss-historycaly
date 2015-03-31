@@ -3,9 +3,9 @@ var uncss = require('gulp-uncss');
 var minifyCSS = require('gulp-minify-css');
 
 gulp.task('default', function() {
-    return gulp.src('index.css')
+    return gulp.src('main.css')
         .pipe(uncss({
-            html: ['http://kovka-na-zakaz.ru/', 'http://kovka-na-zakaz.ru/pricing/', 'http://kovka-na-zakaz.ru/about/', 'http://kovka-na-zakaz.ru/contacts/', 'http://kovka-na-zakaz.ru/favorites/', 'http://kovka-na-zakaz.ru/works/gazebos/', 'http://kovka-na-zakaz.ru/works/']
+            html: ['http://kovkanazakaz.com/', 'http://kovkanazakaz.com/shipping/index.html', 'http://kovkanazakaz.com/about/index.html', 'http://kovkanazakaz.com/contacts/index.html', 'http://kovkanazakaz.com/forging/index.html', 'http://kovkanazakaz.com/favorites/index.html', 'http://kovkanazakaz.com/forging/works/index.html', 'http://kovkanazakaz.com/mounting/index.html', 'http://kovkanazakaz.com/forging/sketches/index.html', 'http://kovkanazakaz.com/forging/works/gazebos/index.html', 'http://kovkanazakaz.com/forging/works/bench/index.html']
         }))
         .pipe(gulp.dest('./out'));
 });
